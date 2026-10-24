@@ -1,0 +1,11 @@
+{
+  "name": "AnswerMitra",
+  "short_name": "AnswerMitra",
+  "description": "Check your answers against your own textbook.",
+  "start_url": "./#/practice",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f6fb",
+  "theme_color": "#5b4bdb",
+  "icons": [{ "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
