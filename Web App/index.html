@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AnswerMitra · Check your answers against your textbook</title>
+  <meta name="description" content="AnswerMitra is a study friend that checks students' answers against their own textbook, with encouraging feedback, HOTS support, handwritten photos and Hindi explanations.">
+  <meta name="theme-color" content="#5b4bdb">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Apply the saved theme before the page paints, so it never flashes.
+    try { const t = localStorage.getItem("am.theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#/practice" aria-label="AnswerMitra home">
+        <svg class="brand__logo" viewBox="0 0 48 48" aria-hidden="true">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c6cf2"/><stop offset="1" stop-color="#4f3fcf"/></linearGradient></defs>
+          <rect width="48" height="48" rx="14" fill="url(#lg)"/>
+          <path d="M11 15c4-1.6 8.5-1.6 13 1.2 4.5-2.8 9-2.8 13-1.2v18c-4-1.6-8.5-1.6-13 1.2-4.5-2.8-9-2.8-13-1.2z" fill="#fff" opacity=".95"/>
+          <path d="M24 16.2v18" stroke="#5b4bdb" stroke-width="1.6"/>
+          <circle cx="35.5" cy="33.5" r="7" fill="#ff9f43"/>
+          <path d="m32.3 33.6 2.2 2.2 4.2-4.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand__name">Answer<span>Mitra</span></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a class="nav__link" href="#/practice" data-route="practice">Practice</a>
+        <a class="nav__link" href="#/progress" data-route="progress">My Progress</a>
+        <a class="nav__link" href="#/teacher" data-route="teacher">Teacher</a>
+      </nav>
+      <div class="topbar__actions">
+        <span class="user-chip" id="user-chip" hidden></span>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch dark or light mode" title="Dark / light mode">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-sun"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-moon"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="server-banner" id="server-banner" role="status" hidden></div>
+
+  <main id="main" class="main" tabindex="-1">
+    <div class="boot" id="boot">
+      <div class="spinner spinner--lg" aria-hidden="true"></div>
+      <p>Loading AnswerMitra…</p>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Main (mobile)">
+    <a href="#/practice" data-route="practice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V6a2 2 0 0 1 2-2h12v15.5H6a2 2 0 0 0-2 2"/><path d="m9 11 2 2 4-4"/></svg><span>Practice</span></a>
+    <a href="#/progress" data-route="progress"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M6 16l4-5 3 3 5-7"/></svg><span>Progress</span></a>
+    <a href="#/teacher" data-route="teacher"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><span>Teacher</span></a>
+  </nav>
+
+  <footer class="footer">
+    <p>AnswerMitra checks answers against your own textbook. Your teacher always has the final say.</p>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+  <div id="modal-root"></div>
+
+  <noscript><p class="noscript">AnswerMitra needs JavaScript. Please turn it on in your browser.</p></noscript>
+  <script src="js/config.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Gradio itself is installed by Hugging Face from "sdk_version" in README.md.
+google-genai>=2.32.0,<3
+# Must stay below 2.0: Hugging Face Spaces preinstall "datasets", which requires it.
+huggingface_hub>=1.16,<2
+pypdf>=6.21.2,<7
+pandas>=2.2,<4
+pydantic>=2.7,<3
